@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <style>
+        #waifuList {
+            display: flex;
+            justify-content: space-around;
+            align-items: stretch;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="./">back</a>
+
+    <div id="waifuList"></div>
+
+    <script>
+        const apiUrl = "https://api.waifu.im/search";
+        const params = {
+            // included_tags: '',
+            height: '>=500'
+        };
+
+        const queryParams = new URLSearchParams(params)
+        const baseUrl = `${apiUrl}?${queryParams}`
+
+        fetch(baseUrl)
+            .then(Response => {
+                if (Response.ok) {
+                    return Response.json();
+                } else {
+                    throw new Error(`Request failed with status code ${Response.status}`);
+                }
+            })
+            .then(ResponseJson => {
+                const urlImage = ResponseJson.images[0].url;
+
+                const waifuItem = document.createElement("img");
+                waifuItem.src = `${urlImage}`;
+                // waifuItem = {
+                    // src: `${urlImage}`,
+                // };
+                waifuItem.style.height = "500px"
+
+                const waifuList = document.getElementById("waifuList");
+                waifuList.append(waifuItem);
+
+                // render(ResponseJson)
+                console.log(ResponseJson);
+                console.log(urlImage)
+            })
+            .catch(error => {
+                console.error('An error occurred:', error.message);
+            });
+
+        // function render(data) {
+        //     const imageElement = document.createElement("img");
+        //     imageElement.src = `${data.images.}`
+        // }
+    </script>
+    
+</body>
+</html>

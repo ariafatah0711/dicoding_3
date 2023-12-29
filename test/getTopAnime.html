@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>top anime</title>
+</head>
+<body>
+
+    <a href="./">back</a>
+
+    <div></div>
+
+    <script>
+        function render(data, number) {
+            if (number > 25) {alert("data tidak terpenuhi")}
+            data = data.data;
+            console.log(data);
+
+            const cardList = document.createElement("div");
+            for (let i = 0; i < number; i++) {
+                cardList.innerHTML += `
+                    <img src="${data[i].images.webp.image_url}">
+                    <h1>${data[i].title}</h1>
+                `
+            }
+            document.querySelector("div").append(cardList);
+            console.info(cardList)
+            // body.appendChild(cardList)
+        }
+
+        function getTopAnime() {
+            const baseUrl = "https://api.jikan.moe/v4/top/anime";
+
+            fetch(baseUrl)
+                .then(response => {return response.json()})
+                .then(ResponseJson => render(ResponseJson, 10))
+                .catch(error => console.info(error));
+        }
+
+        getTopAnime();
+    </script>
+    
+</body>
+</html>

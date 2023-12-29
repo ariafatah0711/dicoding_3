@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>top anime</title>
+</head>
+<body>
+
+    <a href="./">back</a>
+
+    <form name="form-anime-search">
+        <input type="text" name="anime" id="anime-search">
+        <input type="submit" value="kirim"></input>
+    </form>
+    
+    <div id="anime-list"></div>
+
+    <script>
+        function render(data) {
+            data = data.data;
+            console.log(data);
+
+            const cardList = document.createElement("div");
+            for (let i = 0; i < data.length; i++) {
+                cardList.innerHTML += `
+                    <img src="${data[i].images.webp.image_url}">
+                    <h1>${data[i].title}</h1>
+                `
+            }
+            document.getElementById("anime-list").append(cardList);
+            // console.info(cardList)
+        }
+
+        function renderReset() {
+            document.getElementById("anime-list").innerHTML = "";
+        }
+
+        function getAnimeSearch(value) {
+            const queryParams = new URLSearchParams({
+                q: value
+            });
+            const baseUrl = `https://api.jikan.moe/v4/anime?${queryParams}`;
+
+            fetch(baseUrl)
+                .then(response => {return response.json()})
+                .then(ResponseJson => render(ResponseJson))
+                .catch(error => console.info(error));
+        }
+
+        document.forms["form-anime-search"].onsubmit = (e) => {
+            document.getElementById("anime-list").innerHTML = "";
+            
+            let animeSearchByQ = document.getElementById("anime-search").value;
+            getAnimeSearch(animeSearchByQ);
+            animeSearchByQ = "";
+
+            e.preventDefault();
+        }
+    </script>
+    
+</body>
+</html>
