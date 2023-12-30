@@ -16,7 +16,7 @@ class headerNavbar extends HTMLElement {
   render() {
     this.innerHTML = `
     <style>
-      header {
+      header-navbar {
           height: 50px; max-height: 50px;
           position: relative;
           display: flex;
@@ -24,7 +24,7 @@ class headerNavbar extends HTMLElement {
           align-items: center;
           border-bottom: 1px solid black;
       }
-      header h1.tittle {
+      header-navbar h1.tittle {
           font-size: 1.35rem;
       }
       .navbar .menu {
@@ -77,7 +77,6 @@ class headerNavbar extends HTMLElement {
       }
     </style>
 
-    <header>
       <h1 class="tittle">x-anime</h1>
         <nav class="navbar">
             <div class="menu hidden-menu">
@@ -88,66 +87,8 @@ class headerNavbar extends HTMLElement {
             </div>
             <i id="nav-btn" class="fa fa-list navbar-list"></i>
         </nav>
-      </header>
     `;
   }
 }
 
 customElements.define(`header-navbar`, headerNavbar);
-
-// import $ from "jquery";
-
-// class HeaderNavbar extends HTMLElement {
-//   constructor() {
-//     super();
-//     this.shadowDOM = this.attachShadow({ mode: "open" });
-//   }
-
-//   connectedCallback() {
-//     this.render();
-//     this.toggleMenu();
-//   }
-
-//   set clickEvent(event) {
-//     this._clickEvent = event;
-//     this.render();
-//   }
-
-//   get value() {
-//     return this.shadowDOM.querySelector("#searchElement").value;
-//   }
-
-//   toggleMenu() {
-//     const navBtn = this.shadowDOM.querySelector("#nav-btn");
-//     const menu = this.shadowDOM.querySelector(".menu");
-
-//     if (navBtn && menu) {
-//       $(navBtn).click(() => {
-//         $(menu).toggleClass("hidden-menu");
-//       });
-//     }
-//   }
-
-//   render() {
-//     this.shadowDOM.innerHTML = `
-//       <style>
-//         /* (style tetap tidak berubah) */
-//       </style>
-
-//       <header>
-//         <h1 class="tittle">x-anime</h1>
-//         <nav class="navbar">
-//           <div class="menu hidden-menu">
-//             <a class="nav-link" data-section="home">home</a>
-//             <a class="nav-link" data-section="anime">anime</a>
-//             <a class="nav-link" data-section="manga">manga</a>
-//             <a class="nav-link" data-section="characters">characters</a>
-//           </div>
-//           <i id="nav-btn" class="fa fa-list navbar-list"></i>
-//         </nav>
-//       </header>
-//     `;
-//   }
-// }
-
-// customElements.define(`header-navbar`, HeaderNavbar);

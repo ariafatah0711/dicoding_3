@@ -1,13 +1,3 @@
-import "./list/anime-list.js";
-import "./list/manga-list.js";
-import "./list/characters-list.js";
-import "./list/top-anime-list.js";
-import "./list/top-manga-list.js";
-import "./list/top-characters-list.js";
-import "./loader.js";
-import "./header-navbar.js";
-import "./search-history.js";
-
 class HomeList extends HTMLElement {
   constructor() {
     super();
@@ -48,8 +38,8 @@ class HomeList extends HTMLElement {
     /* card */
     this.innerHTML += `
       <style>
-        .card {            
-            height: 300px; width: 180px;
+        .card {
+            height: 320px; width: 180px;
             position: relative;
             display: flex;
             flex-direction: column;

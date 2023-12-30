@@ -11,20 +11,7 @@
     <header-navbar></header-navbar>
     
     <main>
-        <section class="section-1">
-            <form name="anime-search-form">
-                <input type="text" id="search-input" autocomplete="off" spellcheck="false" placeholder="search" 
-                maxlength="20" required>
-                <input type="submit" id="search-submit">
-            </form>
-            
-            <nav class="navbar-top">
-                <input type="button" class="nav-top" data-section="top-anime" value="top-anime">
-                <input type="button" class="nav-top" data-section="top-manga" value="top-manga">
-                <input type="button" class="nav-top" data-section="top-characters" value="top-characters">
-            </nav>
-        </section>
-
+        <search-form></search-form>
         <search-history id="search-history"></search-history>
         
         <section class="section-2">
@@ -38,23 +25,7 @@
         </section>        
     </main>
 
-    <footer>
-        <script>
-            function reset() {
-                sessionStorage.clear();
-                location.reload();
-            }
-            function changeText(element) {
-                element.innerText = "reset data";
-            }
-            function resetText(element) {
-                element.innerHTML = "by &copy;ariafatah0711";
-            }
-        </script>
-        <h5 onclick="reset()" onmouseover="changeText(this)" onmouseout="resetText(this)">
-            by &copy;ariafatah0711
-        </h5>
-    </footer>
+    <footer-section></footer-section>
 
 </body>
 </html>

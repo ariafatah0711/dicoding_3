@@ -1,3 +1,19 @@
+// main
+// import "./loader.js";
+import "./body/header-navbar.js";
+import "./body/search-form.js";
+import "./body/search-history.js";
+import "./body/footer-section.js";
+
+// list
+import "./list/anime-list.js";
+import "./list/manga-list.js";
+import "./list/characters-list.js";
+import "./list/top-anime-list.js";
+import "./list/top-manga-list.js";
+import "./list/top-characters-list.js";
+import "./list/home-list.js";
+
 import $ from "jquery";
 
 class Loader extends HTMLElement {

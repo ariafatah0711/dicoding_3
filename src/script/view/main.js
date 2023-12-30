@@ -2,7 +2,7 @@ import $ from "jquery";
 import Navbar from "./navbar";
 import { DataSearch, DataTop, History } from "../data/session-storage.js";
 import { renderSearch, renderTop, renderHistory } from "./render.js";
-import "../components/home-list.js";
+import "../components/loader.js";
 
 const main = async () => {
   const queries = ["anime", "manga", "characters"];
