@@ -36,8 +36,10 @@ const main = async () => {
     renderHistory();
 
     // nav-top
-    if ((window.location.hash = "#top")) {
-      $(".nav-link[data-section='home']").click();
+    if (window.location.hash.startsWith("#top")) {
+      setTimeout(() => {
+        $(".nav-link[data-section='home']").click();
+      }, 500);
     }
 
     e.preventDefault();

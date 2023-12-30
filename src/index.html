@@ -6,26 +6,9 @@
     <title>x-anime</title>
 </head>
 <body>
-    
-    <header>
-        <h1 class="tittle">x-anime</h1>
 
-        <nav class="navbar">
-            <div class="menu hidden-menu">
-                <a class="nav-link" data-section="home">home</a>
-                <a class="nav-link" data-section="anime">anime</a>
-                <a class="nav-link" data-section="manga">manga</a>
-                <a class="nav-link" data-section="characters">characters</a>
-            </div>
-            <script>
-                const toggleMenu = () => {
-                    // $(".menu").toggleClass("hidden-menu");
-                    document.querySelector(`.menu`).classList.toggle(`hidden-menu`);
-                }
-            </script>
-            <i id="nav-btn" class="fa fa-list navbar-list" onclick="toggleMenu()"></i>
-        </nav>
-    </header>
+    <x-loader></x-loader>
+    <header-navbar></header-navbar>
     
     <main>
         <section class="section-1">
@@ -61,8 +44,14 @@
                 sessionStorage.clear();
                 location.reload();
             }
+            function changeText(element) {
+                element.innerText = "reset data";
+            }
+            function resetText(element) {
+                element.innerHTML = "by &copy;ariafatah0711";
+            }
         </script>
-        <h5 onclick="reset()">
+        <h5 onclick="reset()" onmouseover="changeText(this)" onmouseout="resetText(this)">
             by &copy;ariafatah0711
         </h5>
     </footer>

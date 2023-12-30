@@ -4,6 +4,8 @@ import "./list/characters-list.js";
 import "./list/top-anime-list.js";
 import "./list/top-manga-list.js";
 import "./list/top-characters-list.js";
+import "./loader.js";
+import "./header-navbar.js";
 import "./search-history.js";
 
 class HomeList extends HTMLElement {
