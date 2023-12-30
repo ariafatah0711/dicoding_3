@@ -4,6 +4,7 @@ import "./list/characters-list.js";
 import "./list/top-anime-list.js";
 import "./list/top-manga-list.js";
 import "./list/top-characters-list.js";
+import "./search-history.js";
 
 class HomeList extends HTMLElement {
   constructor() {
@@ -30,13 +31,13 @@ class HomeList extends HTMLElement {
         @media (max-width:1100px) {
           .list .container {grid-template-columns: repeat(4, 180px);}
         }
-        @media (max-width:980px) {
+        @media (max-width:900px) {
           .list .container {grid-template-columns: repeat(3, 180px);}
         }
-        @media (max-width:780px) {
+        @media (max-width:600px) {
           .list .container {grid-template-columns: repeat(2, 180px);}
         }
-        @media (max-width:555px) {
+        @media (max-width:400px) {
           .list .container {grid-template-columns: repeat(1, 180px);}
         }
       </style>

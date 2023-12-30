@@ -24,6 +24,15 @@ module.exports = {
       },
     ],
   },
+  test: /fontawesome-free\.css$/,
+  use: [
+    {
+      loader: "file-loader",
+      options: {
+        name: "fontawesome-free/[name].[ext]",
+      },
+    },
+  ],
 
   // plugin
   plugins: [

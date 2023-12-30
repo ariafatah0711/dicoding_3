@@ -1,4 +1,5 @@
 import $ from "jquery";
+import { keys } from "regenerator-runtime";
 
 const renderSearch = (result, type) => {
   if (type == "characters") {
@@ -16,4 +17,11 @@ const renderTop = (result, type) => {
   }
 };
 
-export { renderSearch, renderTop };
+const renderHistory = () => {
+  const KEY = "history";
+  const animes = JSON.parse(sessionStorage.getItem(KEY));
+
+  $("search-history").prop(`${KEY}s`, animes);
+};
+
+export { renderSearch, renderTop, renderHistory };

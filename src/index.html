@@ -8,23 +8,30 @@
 <body>
     
     <header>
-        <h1>x-anime</h1>
+        <h1 class="tittle">x-anime</h1>
 
         <nav class="navbar">
-            <a class="nav-link" data-section="home">home</a>
-            <a class="nav-link" data-section="anime">anime</a>
-            <a class="nav-link" data-section="manga">manga</a>
-            <a class="nav-link" data-section="characters">characters</a>
-          </nav>  
+            <div class="menu hidden-menu">
+                <a class="nav-link" data-section="home">home</a>
+                <a class="nav-link" data-section="anime">anime</a>
+                <a class="nav-link" data-section="manga">manga</a>
+                <a class="nav-link" data-section="characters">characters</a>
+            </div>
+            <script>
+                const toggleMenu = () => {
+                    // $(".menu").toggleClass("hidden-menu");
+                    document.querySelector(`.menu`).classList.toggle(`hidden-menu`);
+                }
+            </script>
+            <i id="nav-btn" class="fa fa-list navbar-list" onclick="toggleMenu()"></i>
+        </nav>
     </header>
-    
-    <hr>
     
     <main>
         <section class="section-1">
             <form name="anime-search-form">
-                <input type="text" id="search-input">
-                <input type="submit" id="anime-search-submit">
+                <input type="text" id="search-input" autocomplete="off" spellcheck="false" placeholder="search">
+                <input type="submit" id="search-submit">
             </form>
             
             <nav>
@@ -33,6 +40,8 @@
                 <input type="button" class="nav-top" data-section="top-characters" value="top-characters">
             </nav>
         </section>
+
+        <search-history id="search-history"></search-history>
         
         <section class="section-2">
             <home-list id="home" class="home"></home-list>

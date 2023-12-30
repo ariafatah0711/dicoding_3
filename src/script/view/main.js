@@ -1,7 +1,7 @@
 import $ from "jquery";
 import Navbar from "./navbar";
-import { DataSearch, DataTop } from "../data/session-storage.js";
-import { renderSearch, renderTop } from "./render.js";
+import { DataSearch, DataTop, History } from "../data/session-storage.js";
+import { renderSearch, renderTop, renderHistory } from "./render.js";
 import "../components/home-list.js";
 
 const main = async () => {
@@ -30,7 +30,16 @@ const main = async () => {
 
   /* form */
   $(`form[name="anime-search-form"]`)[0].onsubmit = (e) => {
-    queries.map((query) => btnSearch($(`#search-input`).value, query));
+    const searchInput = $(`#search-input`).val();
+    queries.map((query) => btnSearch(searchInput, query));
+    History.push(searchInput);
+    renderHistory();
+
+    // nav-top
+    if ((window.location.hash = "#top")) {
+      $(".nav-link[data-section='home']").click();
+    }
+
     e.preventDefault();
   };
 
@@ -57,6 +66,7 @@ const main = async () => {
   };
 
   setUp();
+  renderHistory();
 };
 
 export default main;

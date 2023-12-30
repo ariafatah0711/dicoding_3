@@ -31,6 +31,8 @@ class Navbar {
 
       const url = `#${sectionToShow}`;
       history.pushState({}, "", url);
+
+      $(".menu").addClass("hidden-menu");
     });
   }
 }

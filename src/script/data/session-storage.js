@@ -37,4 +37,13 @@ class DataTop {
   }
 }
 
-export { DataSearch, DataTop };
+class History {
+  static async push(keyword) {
+    const KEY = "history";
+    let animes = new Set(JSON.parse(sessionStorage.getItem(KEY)) || []);
+    animes.add(keyword);
+    sessionStorage.setItem(KEY, JSON.stringify(Array.from(animes)));
+  }
+}
+
+export { DataSearch, DataTop, History };
