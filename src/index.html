@@ -30,7 +30,8 @@
     <main>
         <section class="section-1">
             <form name="anime-search-form">
-                <input type="text" id="search-input" autocomplete="off" spellcheck="false" placeholder="search">
+                <input type="text" id="search-input" autocomplete="off" spellcheck="false" placeholder="search" 
+                maxlength="20" required>
                 <input type="submit" id="search-submit">
             </form>
             
@@ -55,7 +56,15 @@
     </main>
 
     <footer>
-        by &copy;ariafatah0711
+        <script>
+            function reset() {
+                sessionStorage.clear();
+                location.reload();
+            }
+        </script>
+        <h5 onclick="reset()">
+            by &copy;ariafatah0711
+        </h5>
     </footer>
 
 </body>

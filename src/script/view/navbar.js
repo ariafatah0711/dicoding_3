@@ -13,6 +13,13 @@ class Navbar {
     ];
     this.hideAllSections();
     this.setupEventHandlers();
+
+    window.addEventListener("resize", () => {
+      const windowWidth = window.innerWidth;
+      if (windowWidth <= 768) {
+        this.toggleMenuOff();
+      }
+    });
   }
 
   hideAllSections() {
@@ -24,6 +31,10 @@ class Navbar {
     $(`#${sectionId}`).show();
   }
 
+  toggleMenuOff() {
+    $(".menu").addClass("hidden-menu");
+  }
+
   setupEventHandlers() {
     $(".nav-link, .nav-top").click((event) => {
       const sectionToShow = $(event.target).data("section");
@@ -32,7 +43,8 @@ class Navbar {
       const url = `#${sectionToShow}`;
       history.pushState({}, "", url);
 
-      $(".menu").addClass("hidden-menu");
+      this.toggleMenuOff();
+      // $(".menu").addClass("hidden-menu");
     });
   }
 }

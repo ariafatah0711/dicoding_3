@@ -1,9 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-@import '../../node_modules/@fortawesome/fontawesome-free/css/all.css';
+/* @import '../../node_modules/@fortawesome/fontawesome-free/css/all.css'; */
 
 :root {
     --brd: 0.1rem solid gray;
-
     --main-color: #d3ad7f;
 }
 
@@ -20,6 +19,9 @@
 body {
     padding: 0 50px;
     scroll-padding-top: 150px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 @media (max-width:678px) {
     body {
@@ -27,15 +29,27 @@ body {
     }
 }
 
-a, button {
-    cursor: pointer;
+a, button, input[type="button"], input[type="submit"], h5, i {
+    cursor: pointer !important;
 }
 
 /* footer */
 footer {
     width: 100%; height: 50px;
+    padding: 10px;
     display: flex;
     justify-content: center;
+    align-items: end;
+    flex-grow: 1;
+}
+
+footer h5 {
+    width: 100%;
+    background: var(--main-color);
+    text-align: center;
+}
+footer h5:hover {
+    background-color: #fc5f9b;
 }
 
 /* style */
@@ -84,6 +98,7 @@ a:hover {color: var(--main-color) !important;}
 }
 form {
     display: flex;
+    gap: 5px;
 
     /* border: var(--brd); */
 }
@@ -123,10 +138,10 @@ search-history p {
 .navbar-list {
     display: none;
 }
+#nav-btn {display: none;}
 @media (max-width:600px) {
-    .hidden-menu {
-        display: none !important;
-    }
+    .hidden-menu {display: none !important;}
+    #nav-btn {display: flex;}
     .navbar .menu {
         width: 100%;
         padding: 10px 0;
@@ -160,6 +175,7 @@ search-history p {
         position: relative;
         display: flex;
         width: 100%;
+        gap: 5px;
 
         /* border: var(--brd); */
     }
