@@ -1,5 +1,4 @@
 import $ from "jquery";
-import { keys } from "regenerator-runtime";
 
 const renderSearch = (result, type) => {
   if (type == "characters") {
@@ -19,8 +18,8 @@ const renderTop = (result, type) => {
 
 const renderHistory = () => {
   const KEY = "history";
-  const animes = JSON.parse(sessionStorage.getItem(KEY));
-  animes.reverse();
+  const animesArray = JSON.parse(sessionStorage.getItem(KEY)) || [];
+  const animes = animesArray.slice(-5).reverse();
 
   $("search-history").prop(`${KEY}s`, animes);
 };

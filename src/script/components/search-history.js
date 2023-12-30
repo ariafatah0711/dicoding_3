@@ -7,7 +7,8 @@ class searchHistory extends HTMLElement {
   }
 
   render() {
-    this.innerHTML = `<p>history</p>`;
+    this.innerHTML = ``;
+    // this.innerHTML = `<p>history</p>`;
 
     if (Array.isArray(this._historys)) {
       this._historys.forEach((history) => {
