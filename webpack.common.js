@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpack = require("webpack"); // Import webpack
 const path = require("path");
 
 module.exports = {
@@ -22,23 +23,32 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /fontawesome-free\.css$/, // Move this inside the rules array
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "fontawesome-free/[name].[ext]",
+            },
+          },
+        ],
+      },
     ],
   },
-  test: /fontawesome-free\.css$/,
-  use: [
-    {
-      loader: "file-loader",
-      options: {
-        name: "fontawesome-free/[name].[ext]",
-      },
-    },
-  ],
 
   // plugin
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/index.html",
       filename: "index.html",
+    }),
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        // Your loader options here
+        // For example, you can use this for some modules
+        // use: ...
+      },
     }),
   ],
 };

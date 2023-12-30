@@ -1,5 +1,8 @@
 const searchRequest = (keyword, type) => {
-  const queryParams = new URLSearchParams({ q: keyword });
+  const queryParams = new URLSearchParams({
+    q: keyword,
+    sfw: true,
+  });
   return fetch(`https://api.jikan.moe/v4/${type}?${queryParams}`)
     .then((response) => response.json())
     .then((responseJson) => {

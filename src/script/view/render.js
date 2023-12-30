@@ -20,6 +20,7 @@ const renderTop = (result, type) => {
 const renderHistory = () => {
   const KEY = "history";
   const animes = JSON.parse(sessionStorage.getItem(KEY));
+  animes.reverse();
 
   $("search-history").prop(`${KEY}s`, animes);
 };

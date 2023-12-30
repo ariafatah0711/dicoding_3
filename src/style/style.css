@@ -118,14 +118,20 @@ search-history p {
     }
     .navbar .menu {
         width: 100%;
-        position: absolute;
+        padding: 10px 0;
         margin-top: 25px;
+        position: absolute;
         left: 0;
-        background-color: #efefef;
+        display: flex;
         flex-direction: column;
+        justify-content: center;
+        background-color: #efefef;
         z-index: 5;
 
         border: var(--brd);
+    }
+    .navbar .menu a {
+        text-align: center;
     }
     .navbar a::after{display: none;}
     .navbar-list {
