@@ -34,12 +34,10 @@ class FooterSection extends HTMLElement {
     <div class="footer">
         <style>
             .footer {
-                width: 100%; height: 50px;
-                padding: 10px;
+                width: 100%;
                 display: flex;
                 justify-content: center;
-                align-items: end;
-                flex-grow: 1;
+                align-items: center;
                 cursor: pointer;
             }
             
@@ -47,13 +45,14 @@ class FooterSection extends HTMLElement {
                 width: 100%;
                 background: var(--main-color);
                 text-align: center;
+                margin-bottom: 0; 
             }
             .footer h5:hover {
                 background-color: #fc5f9b;
             }
         </style>
 
-        <h5 onclick="reset()">
+        <h5>
             by &copy;ariafatah0711
         </h5>
     </div>

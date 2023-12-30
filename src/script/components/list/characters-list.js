@@ -4,7 +4,6 @@ class CharacterList extends HTMLElement {
   set characters(characters) {
     this._characters = characters;
     this.render();
-    // console.log("set character list");
   }
 
   render() {

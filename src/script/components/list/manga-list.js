@@ -4,7 +4,6 @@ class MangaList extends HTMLElement {
   set mangas(mangas) {
     this._mangas = mangas;
     this.render();
-    // console.log("set anime list");
   }
 
   render() {

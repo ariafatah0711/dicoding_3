@@ -1,11 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-/* @import '../../node_modules/@fortawesome/fontawesome-free/css/all.css'; */
-
 :root {
-    --brd: 0.1rem solid gray;
     --main-color: #d3ad7f;
 }
-
 * {
     font-family: 'Poppins', Tahoma ,sans-serif;
     margin: 0; padding: 0;
@@ -29,38 +25,21 @@ body {
     }
 }
 
-a, button, input[type="button"], input[type="submit"], h5, i {
+i, a, h5, button, 
+input[type="button"], 
+input[type="submit"]
+{
     cursor: pointer !important;
 }
-a:hover {color: var(--main-color) !important;}
+a:hover {
+    color: var(--main-color) !important;
+}
 
-
-/* footer */
-
-
-/* section-1 */
-
-
-/* search history */
-search-history {
-    padding: 5px 20px;
-    position: relative;
+footer-section {
+    width: 100%; height: 50px;
+    padding: 10px 0;
     display: flex;
+    justify-content: center;
+    align-items: end;
     flex-grow: 1;
-    gap: 10px;
-
-    /* border: var(--brd); */
 }
-
-search-history button {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-search-history p {
-    position: absolute;
-    right: 0;
-}
-
-/* media */

@@ -1,4 +1,3 @@
-import $ from "jquery";
 import { searchRequest, topRequest } from "./request.js";
 
 class DataSearch {
@@ -11,7 +10,6 @@ class DataSearch {
       result = await searchRequest(keyword, type);
       sessionStorage.setItem(KEY, JSON.stringify(result));
     } else {
-      // console.log(`${KEY} found`);
       result = JSON.parse(result);
     }
 
@@ -27,9 +25,9 @@ class DataTop {
     if (result === null || result === "undefined") {
       console.info(`${KEY} not found::request to server...`);
       result = await topRequest(type);
+      result.sort((a, b) => a.rank - b.rank);
       sessionStorage.setItem(KEY, JSON.stringify(result));
     } else {
-      // console.info(`${KEY} found`);
       result = JSON.parse(result);
     }
 

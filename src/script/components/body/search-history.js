@@ -1,5 +1,3 @@
-import $ from "jquery";
-
 class searchHistory extends HTMLElement {
   set historys(historys) {
     this._historys = historys;
@@ -7,8 +5,28 @@ class searchHistory extends HTMLElement {
   }
 
   render() {
-    this.innerHTML = ``;
-    // this.innerHTML = `<p>history</p>`;
+    this.innerHTML = `
+      <style>
+        search-history {
+            padding: 5px 20px;
+            position: relative;
+            display: flex;
+            flex-grow: 1;
+            gap: 10px;
+        }
+        
+        search-history button {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        search-history p {
+            position: absolute;
+            right: 0;
+        }
+      </style>
+    `;
 
     if (Array.isArray(this._historys)) {
       this._historys.forEach((history) => {

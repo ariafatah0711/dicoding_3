@@ -31,15 +31,13 @@ const main = async () => {
   /* form */
   $(`form[name="anime-search-form"]`)[0].onsubmit = (e) => {
     const searchInput = $(`#search-input`).val();
-    queries.map((query) => btnSearch(searchInput, query));
+    queries.forEach((query) => btnSearch(searchInput, query));
     History.push(searchInput);
     renderHistory();
 
     // nav-top
     if (window.location.hash.startsWith("#top")) {
-      setTimeout(() => {
-        $(".nav-link[data-section='home']").click();
-      }, 500);
+      setTimeout(() => $(".nav-link[data-section='home']").click(), 500);
     }
 
     e.preventDefault();
@@ -50,20 +48,19 @@ const main = async () => {
     if (Object.keys(sessionStorage).length < 6) {
       for (let i = 0; i < queries.length; i++) {
         const query = queries[i];
-
         setTimeout(async () => {
-          btnTop(query);
+          await btnTop(query);
           await new Promise((resolve) => setTimeout(resolve, 1000));
 
           if (i === queries.length - 1) {
-            queries.map((query) => btnSearch("naruto", query));
+            queries.forEach((query) => btnSearch("naruto", query));
             await setUp();
           }
         }, i * 1000);
       }
     } else {
       queries.forEach((query) => btnTop(query));
-      queries.map((query) => btnSearch("naruto", query));
+      queries.forEach((query) => btnSearch("naruto", query));
     }
   };
 

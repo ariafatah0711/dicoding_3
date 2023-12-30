@@ -64,8 +64,6 @@ class headerNavbar extends HTMLElement {
             justify-content: center;
             background-color: #efefef;
             z-index: 5;
-
-            /* border: var(--brd); */
         }
         .navbar .menu a {
             text-align: center;
@@ -77,7 +75,7 @@ class headerNavbar extends HTMLElement {
       }
     </style>
 
-      <h1 class="tittle">x-anime</h1>
+      <h1 class="tittle">AnimeLab</h1>
         <nav class="navbar">
             <div class="menu hidden-menu">
                 <a class="nav-link" data-section="home">home</a>
