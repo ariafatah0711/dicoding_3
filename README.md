@@ -62,7 +62,7 @@
 <p id="related"></p>
 
 ## 📈 related
-<a href="https://ariafatah0711.github.io/dicoding_2/" alt="DEMO"><img src="https://img.shields.io/static/v1?style=for-the-badge&label=DEMO&message=WEB&color=000000"></a>
+<a href="https://ariafatah0711.github.io/dicoding_3/dist/" alt="DEMO"><img src="https://img.shields.io/static/v1?style=for-the-badge&label=DEMO&message=WEB&color=000000"></a>
 
 <p id="license"></p>
 
