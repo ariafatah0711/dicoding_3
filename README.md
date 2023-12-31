@@ -21,12 +21,11 @@
 <details>
   <summary><b>Checklist</b></summary>
   
-  - [✔️] Menggunakan standar ES6 dalam menuliskan kode JavaScript.
-  - [✔️] Terdapat minimal satu penerapan custom element.
-  - [✔️] Menggunakan Webpack sebagai module bundler (tahap production).
-  - [✔️] Memanfaatkan Webpack sebagai environment dalam pengembangan proyek (tahap development).
-  - [✔️] Utilizing localStorage for Storing Book Data.
-  - [✔️] Memanfaatkan API dengan menggunakan konsep AJAX dalam menampilkan data yang dinamis pada aplikasi yang dibuat
+  - [✔️] Utilizes ES6 standard for JavaScript code.
+  - [✔️] Implements at least one custom element.
+  - [✔️] Uses Webpack as a module bundler for the production stage.
+  - [✔️] Leverages Webpack as the development environment for the project.
+  - [✔️] Utilizes an API with AJAX concepts to dynamically display data in the created application.
 </details>
 
 <details>
