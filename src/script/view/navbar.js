@@ -44,7 +44,6 @@ class Navbar {
       history.pushState({}, "", url);
 
       this.toggleMenuOff();
-      // $(".menu").addClass("hidden-menu");
     });
   }
 }
