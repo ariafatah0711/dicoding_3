@@ -54,9 +54,10 @@
    npm install
    ```
 5. Execute the following command to build and run the project:
-   ```
+   ```sh
    npm run start-dev
    ```
+6. lauch http://localhost:8080/ in web browser
 
 <p id="related"></p>
 
