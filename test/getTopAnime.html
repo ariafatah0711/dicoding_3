@@ -3,17 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>top anime</title>
+    <title>Top Anime</title>
+    <!-- Menggunakan Axios dari CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
 
-    <a href="./">back</a>
+    <a href="./">Back</a>
 
     <div></div>
 
     <script>
         function render(data, number) {
-            if (number > 25) {alert("data tidak terpenuhi")}
+            if (number > 25) {
+                alert("Data tidak terpenuhi");
+            }
+
             data = data.data;
             console.log(data);
 
@@ -22,20 +27,23 @@
                 cardList.innerHTML += `
                     <img src="${data[i].images.webp.image_url}">
                     <h1>${data[i].title}</h1>
-                `
+                `;
             }
             document.querySelector("div").append(cardList);
-            console.info(cardList)
-            // body.appendChild(cardList)
+            console.info(cardList);
         }
 
         function getTopAnime() {
             const baseUrl = "https://api.jikan.moe/v4/top/anime";
 
-            fetch(baseUrl)
-                .then(response => {return response.json()})
-                .then(ResponseJson => render(ResponseJson, 10))
-                .catch(error => console.info(error));
+            // Menggunakan Axios untuk melakukan request
+            axios.get(baseUrl)
+                .then(response => {
+                    render(response.data, 10);
+                })
+                .catch(error => {
+                    console.error(error);
+                });
         }
 
         getTopAnime();
