@@ -1,52 +1,52 @@
 // body
-import "./result-list.js";
-import "./body/header-navbar.js";
-import "./body/search-form.js";
-import "./body/search-history.js";
-import "./body/footer-section.js";
+import './result-list.js'
+import './body/header-navbar.js'
+import './body/search-form.js'
+import './body/search-history.js'
+import './body/footer-section.js'
 
 // list
-import "./list/home-list.js";
-import "./list/anime-list.js";
-import "./list/manga-list.js";
-import "./list/characters-list.js";
-import "./list/top-anime-list.js";
-import "./list/top-manga-list.js";
-import "./list/top-characters-list.js";
+import './list/home-list.js'
+import './list/anime-list.js'
+import './list/manga-list.js'
+import './list/characters-list.js'
+import './list/top-anime-list.js'
+import './list/top-manga-list.js'
+import './list/top-characters-list.js'
 
-import $ from "jquery";
+import $ from 'jquery'
 
 class Loader extends HTMLElement {
-  constructor() {
-    super();
-    this.setUp();
-    this.render();
+  constructor () {
+    super()
+    this.setUp()
+    this.render()
   }
 
-  setUp() {
-    if (sessionStorage.getItem("firstVisit") === null) {
-      this.showLoader();
+  setUp () {
+    if (sessionStorage.getItem('firstVisit') === null) {
+      this.showLoader()
 
-      sessionStorage.setItem("firstVisit", "true");
+      sessionStorage.setItem('firstVisit', 'true')
       setTimeout(() => {
-        this.hideLoader();
-        $("x-loader").remove();
-      }, 5500);
+        this.hideLoader()
+        $('x-loader').remove()
+      }, 5500)
     } else {
-      this.hideLoader();
-      $("x-loader").remove();
+      this.hideLoader()
+      $('x-loader').remove()
     }
   }
 
-  showLoader() {
-    $("#loader-wrapper").css("display", "flex");
+  showLoader () {
+    $('#loader-wrapper').css('display', 'flex')
   }
 
-  hideLoader() {
-    $("#loader-wrapper").css("display", "none");
+  hideLoader () {
+    $('#loader-wrapper').css('display', 'none')
   }
 
-  render() {
+  render () {
     this.innerHTML = `
         <style>
             #loader-wrapper {
@@ -82,8 +82,8 @@ class Loader extends HTMLElement {
         <div id="loader-wrapper">
             <div id="loader"></div>
         </div>
-    `;
+    `
   }
 }
 
-customElements.define(`x-loader`, Loader);
+customElements.define('x-loader', Loader)

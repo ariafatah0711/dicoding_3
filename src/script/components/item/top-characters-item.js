@@ -1,10 +1,14 @@
 class topCharactersItem extends HTMLElement {
-  set character(character) {
-    this._character = character;
-    this.render();
+  get character () {
+    return this._character
   }
 
-  render() {
+  set character (character) {
+    this._character = character
+    this.render()
+  }
+
+  render () {
     this.innerHTML = `
               <a href="${this._character.url}" class="card" draggable="false">
                   <img src="${this._character.images.webp.image_url}" alt="img" draggable="false">
@@ -13,8 +17,8 @@ class topCharactersItem extends HTMLElement {
                       <p>${this._character.favorites} fav</p>
                   </span>
               </a>
-          `;
+          `
   }
 }
 
-customElements.define(`top-characters-item`, topCharactersItem);
+customElements.define('top-characters-item', topCharactersItem)

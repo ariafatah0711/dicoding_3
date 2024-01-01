@@ -1,35 +1,35 @@
 class FooterSection extends HTMLElement {
-  constructor() {
-    super();
-    this.shadowDOM = this.attachShadow({ mode: "open" });
+  constructor () {
+    super()
+    this.shadowDOM = this.attachShadow({ mode: 'open' })
   }
 
-  connectedCallback() {
-    this.render();
-    this.addEventListeners();
+  connectedCallback () {
+    this.render()
+    this.addEventListeners()
   }
 
-  addEventListeners() {
-    const h5Element = this.shadowDOM.querySelector("h5");
-    h5Element.addEventListener("click", this.reset);
-    h5Element.addEventListener("mouseover", () => this.changeText(h5Element));
-    h5Element.addEventListener("mouseout", () => this.resetText(h5Element));
+  addEventListeners () {
+    const h5Element = this.shadowDOM.querySelector('h5')
+    h5Element.addEventListener('click', this.reset)
+    h5Element.addEventListener('mouseover', () => this.changeText(h5Element))
+    h5Element.addEventListener('mouseout', () => this.resetText(h5Element))
   }
 
-  reset() {
-    sessionStorage.clear();
-    location.reload();
+  reset () {
+    sessionStorage.clear()
+    location.reload()
   }
 
-  changeText(element) {
-    element.innerText = "reset data";
+  changeText (element) {
+    element.innerText = 'reset data'
   }
 
-  resetText(element) {
-    element.innerHTML = "by &copy;ariafatah0711";
+  resetText (element) {
+    element.innerHTML = 'by &copy;ariafatah0711'
   }
 
-  render() {
+  render () {
     this.shadowDOM.innerHTML = `
     <div class="footer">
         <style>
@@ -56,8 +56,8 @@ class FooterSection extends HTMLElement {
             by &copy;ariafatah0711
         </h5>
     </div>
-    `;
+    `
   }
 }
 
-customElements.define(`footer-section`, FooterSection);
+customElements.define('footer-section', FooterSection)

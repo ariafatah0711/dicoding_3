@@ -1,13 +1,9 @@
 class HomeList extends HTMLElement {
-  constructor() {
-    super();
+  connectedCallback () {
+    this.render()
   }
 
-  connectedCallback() {
-    this.render();
-  }
-
-  render() {
+  render () {
     this.innerHTML = `
         <style>
           .home-list .container
@@ -25,8 +21,8 @@ class HomeList extends HTMLElement {
         <anime-list class="home-list"></anime-list>
         <manga-list class="home-list"></manga-list>
         <characters-list class="home-list"></characters-list>
-    `;
+    `
   }
 }
 
-customElements.define(`home-list`, HomeList);
+customElements.define('home-list', HomeList)

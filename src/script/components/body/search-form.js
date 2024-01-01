@@ -1,10 +1,10 @@
 class SearchForm extends HTMLElement {
-  constructor() {
-    super();
-    this.render();
+  constructor () {
+    super()
+    this.render()
   }
 
-  render() {
+  render () {
     this.innerHTML = `
       <style>
         search-form {
@@ -72,8 +72,8 @@ class SearchForm extends HTMLElement {
             <input type="button" class="nav-top" data-section="top-manga" value="top-manga">
             <input type="button" class="nav-top" data-section="top-characters" value="top-characters">
         </nav>
-    `;
+    `
   }
 }
 
-customElements.define("search-form", SearchForm);
+customElements.define('search-form', SearchForm)

@@ -1,19 +1,19 @@
-import $ from "jquery";
+import $ from 'jquery'
 
 class headerNavbar extends HTMLElement {
-  constructor() {
-    super();
-    this.render();
-    this.toggleMenu();
+  constructor () {
+    super()
+    this.render()
+    this.toggleMenu()
   }
 
-  toggleMenu() {
-    $("#nav-btn").click(() => {
-      $(".menu").toggleClass("hidden-menu");
-    });
+  toggleMenu () {
+    $('#nav-btn').click(() => {
+      $('.menu').toggleClass('hidden-menu')
+    })
   }
 
-  render() {
+  render () {
     this.innerHTML = `
     <style>
       header-navbar {
@@ -86,8 +86,8 @@ class headerNavbar extends HTMLElement {
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
             <i id="nav-btn" class="fa fa-list navbar-list"></i>
         </nav>
-    `;
+    `
   }
 }
 
-customElements.define(`header-navbar`, headerNavbar);
+customElements.define('header-navbar', headerNavbar)

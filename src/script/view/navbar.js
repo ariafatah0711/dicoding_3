@@ -1,51 +1,51 @@
-import $ from "jquery";
+import $ from 'jquery'
 
 class Navbar {
-  constructor() {
+  constructor () {
     this.sections = [
-      "home",
-      "anime",
-      "manga",
-      "characters",
-      "top-anime",
-      "top-manga",
-      "top-characters",
-    ];
-    this.hideAllSections();
-    this.setupEventHandlers();
+      'home',
+      'anime',
+      'manga',
+      'characters',
+      'top-anime',
+      'top-manga',
+      'top-characters'
+    ]
+    this.hideAllSections()
+    this.setupEventHandlers()
 
-    window.addEventListener("resize", () => {
-      const windowWidth = window.innerWidth;
+    window.addEventListener('resize', () => {
+      const windowWidth = window.innerWidth
       if (windowWidth <= 768) {
-        this.toggleMenuOff();
+        this.toggleMenuOff()
       }
-    });
+    })
   }
 
-  hideAllSections() {
-    this.sections.forEach((section) => $(`#${section}`).hide());
+  hideAllSections () {
+    this.sections.forEach((section) => $(`#${section}`).hide())
   }
 
-  showSection(sectionId) {
-    this.hideAllSections();
-    $(`#${sectionId}`).show();
+  showSection (sectionId) {
+    this.hideAllSections()
+    $(`#${sectionId}`).show()
   }
 
-  toggleMenuOff() {
-    $(".menu").addClass("hidden-menu");
+  toggleMenuOff () {
+    $('.menu').addClass('hidden-menu')
   }
 
-  setupEventHandlers() {
-    $(".nav-link, .nav-top").click((event) => {
-      const sectionToShow = $(event.target).data("section");
-      this.showSection(sectionToShow);
+  setupEventHandlers () {
+    $('.nav-link, .nav-top').click((event) => {
+      const sectionToShow = $(event.target).data('section')
+      this.showSection(sectionToShow)
 
-      const url = `#${sectionToShow}`;
-      history.pushState({}, "", url);
+      const url = `#${sectionToShow}`
+      history.pushState({}, '', url)
 
-      this.toggleMenuOff();
-    });
+      this.toggleMenuOff()
+    })
   }
 }
 
-export default Navbar;
+export default Navbar
