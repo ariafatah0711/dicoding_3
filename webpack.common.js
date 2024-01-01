@@ -13,6 +13,10 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.html$/,
+        use: ["html-loader"],
+      },
+      {
         test: /\.css$/,
         use: [
           {
@@ -24,12 +28,13 @@ module.exports = {
         ],
       },
       {
-        test: /fontawesome-free\.css$/, // Move this inside the rules array
+        test: /\.(png|jpg|jpeg|gif|svg)$/,
         use: [
           {
             loader: "file-loader",
             options: {
-              name: "fontawesome-free/[name].[ext]",
+              name: "[name].[ext]",
+              outputPath: "images/",
             },
           },
         ],
@@ -43,12 +48,6 @@ module.exports = {
       template: "./src/index.html",
       filename: "index.html",
     }),
-    new webpack.LoaderOptionsPlugin({
-      options: {
-        // Your loader options here
-        // For example, you can use this for some modules
-        // use: ...
-      },
-    }),
+    new webpack.LoaderOptionsPlugin(),
   ],
 };
