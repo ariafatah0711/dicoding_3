@@ -14,11 +14,6 @@ class DataSearch {
       result = JSON.parse(result)
     }
 
-    if (result === undefined) {
-      result = []
-      sessionStorage.setItem(KEY, JSON.stringify(result))
-    }
-
     return Promise.resolve(result)
   }
 }

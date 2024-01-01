@@ -39,10 +39,12 @@ class Loader extends HTMLElement {
   }
 
   showLoader () {
+    $('main').hide()
     $('#loader-wrapper').css('display', 'flex')
   }
 
   hideLoader () {
+    $('main').show()
     $('#loader-wrapper').css('display', 'none')
   }
 

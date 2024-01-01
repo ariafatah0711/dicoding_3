@@ -3,7 +3,12 @@ import reverse from 'lodash/reverse'
 
 const renderSearch = (result, type) => {
   const propName = type === 'characters' ? `${type}` : `${type}s`
-  $(`${type}-list`).prop(propName, result)
+  if (result === undefined) {
+    result = []
+    $(`${type}-list`).prop(propName, result)
+  } else {
+    $(`${type}-list`).prop(propName, result)
+  }
 }
 
 const renderTop = (result, type) => {
