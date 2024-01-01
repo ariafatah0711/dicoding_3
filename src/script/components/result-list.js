@@ -1,9 +1,9 @@
 class ResultList extends HTMLElement {
-  connectedCallback () {
-    this.render()
+  connectedCallback() {
+    this.render();
   }
 
-  render () {
+  render() {
     this.innerHTML = `
         <style>
             .list .container {
@@ -39,7 +39,7 @@ class ResultList extends HTMLElement {
                 overflow: hidden;
             }
             .card:hover {
-                background: #efefef;
+                background: #efefef
             }
             
             img {
@@ -78,17 +78,17 @@ class ResultList extends HTMLElement {
                 grid-template-columns: repeat(2, 25% auto);
                 flex-direction: column;
               }
-              .list .container.top .card span h1 {
-                font-size: 1.5rem;
-                text-align: left;
-              }
-              .list .container.top .card span p {
-                display: flex;
-                font-size: 0.75rem;
-                white-space: wrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-              }
+            .list .container.top .card span h1 {
+              font-size: 1.5rem;
+              text-align: left;
+            }
+            .list .container.top .card span p {
+              display: flex;
+              font-size: 0.75rem;
+              white-space: wrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
         </style>
 
         <home-list id="home" class="home"></home-list>
@@ -98,8 +98,8 @@ class ResultList extends HTMLElement {
         <top-anime-list id="top-anime" class="list"></top-anime-list>
         <top-manga-list id="top-manga" class="list"></top-manga-list>
         <top-characters-list id="top-characters" class="list"></top-characters-list>
-    `
+    `;
   }
 }
 
-customElements.define('result-list', ResultList)
+customElements.define("result-list", ResultList);

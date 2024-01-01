@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 :root {
     --main-color: #d3ad7f;
+    
+    --main-color: #F0ECE5;
+    --text: #161A30;
+    --bg-color: #B6BBC4;
+    --col-1: #B6BBC4;
+    --col-2: #3498db;
 }
 * {
     font-family: 'Poppins', Tahoma ,sans-serif;
@@ -10,6 +16,7 @@
     text-decoration: none;
     text-transform: capitalize;
     user-select: none;
+    color: var(--text);
 }
 
 body {
@@ -42,4 +49,14 @@ footer-section {
     justify-content: center;
     align-items: end;
     flex-grow: 1;
+}
+
+/* styling ulang */
+.card:hover h1,
+.card:hover p {
+    color: var(--col-2) !important;
+}
+
+header-navbar {
+    background: var(--bg-color);
 }
