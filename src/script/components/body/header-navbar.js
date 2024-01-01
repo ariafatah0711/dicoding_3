@@ -1,22 +1,23 @@
-import $ from "jquery";
+import $ from 'jquery'
 
 class headerNavbar extends HTMLElement {
-  constructor() {
-    super();
-    this.render();
-    this.toggleMenu();
+  constructor () {
+    super()
+    this.render()
+    this.toggleMenu()
   }
 
-  toggleMenu() {
-    $("#nav-btn").click(() => {
-      $(".menu").toggleClass("hidden-menu");
-    });
+  toggleMenu () {
+    $('#nav-btn').click(() => {
+      $('.menu').toggleClass('hidden-menu')
+    })
   }
 
-  render() {
+  render () {
     this.innerHTML = `
       <style>
         header-navbar {
+            padding: 0 15px;
             height: 50px; max-height: 50px;
             position: relative;
             display: flex;
@@ -94,10 +95,10 @@ class headerNavbar extends HTMLElement {
         </div>
         <i id="nav-btn" class="fa fa-list navbar-list">#</i>
         </nav>
-        `;
+        `
     // <script src="https://kit.fontawesome.com/c90c144b50.js" crossorigin="anonymous"></script>
     // <i id="nav-btn" class="fa fa-list navbar-list"></i>
   }
 }
 
-customElements.define("header-navbar", headerNavbar);
+customElements.define('header-navbar', headerNavbar)
