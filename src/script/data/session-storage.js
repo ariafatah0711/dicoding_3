@@ -1,3 +1,4 @@
+import { union, takeRight, sortBy } from 'lodash'
 import { searchRequest, topRequest } from './request.js'
 
 class DataSearch {
@@ -25,7 +26,7 @@ class DataTop {
     if (result === null || result === 'undefined') {
       console.info(`${KEY} not found::request to server...`)
       result = await topRequest(type)
-      result.sort((a, b) => a.rank - b.rank)
+      result = sortBy(result, 'rank')
       sessionStorage.setItem(KEY, JSON.stringify(result))
     } else {
       result = JSON.parse(result)
@@ -36,11 +37,11 @@ class DataTop {
 }
 
 class History {
-  static async push (keyword) {
+  static async push (keyword, limit = 6) {
     const KEY = 'history'
-    const animes = new Set(JSON.parse(sessionStorage.getItem(KEY)) || [])
-    animes.delete(keyword)
-    animes.add(keyword)
+    let animes = new Set(JSON.parse(sessionStorage.getItem(KEY)) || [])
+    animes = new Set(union(Array.from(animes), [keyword]))
+    animes = new Set(takeRight(Array.from(animes), limit))
     sessionStorage.setItem(KEY, JSON.stringify(Array.from(animes)))
   }
 }

@@ -1,11 +1,9 @@
 import $ from 'jquery'
+import reverse from 'lodash/reverse'
 
 const renderSearch = (result, type) => {
-  if (type === 'characters') {
-    $(`${type}-list`).prop(`${type}`, result)
-  } else {
-    $(`${type}-list`).prop(`${type}s`, result)
-  }
+  const propName = type === 'characters' ? `${type}` : `${type}s`
+  $(`${type}-list`).prop(propName, result)
 }
 
 const renderTop = (result, type) => {
@@ -19,7 +17,7 @@ const renderTop = (result, type) => {
 const renderHistory = () => {
   const KEY = 'history'
   const animesArray = JSON.parse(sessionStorage.getItem(KEY)) || []
-  const animes = animesArray.slice(-5).reverse()
+  const animes = reverse(animesArray)
 
   $('search-history').prop(`${KEY}s`, animes)
 }

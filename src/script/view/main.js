@@ -33,7 +33,7 @@ const main = async () => {
   $('form[name="anime-search-form"]')[0].onsubmit = (e) => {
     const searchInput = $('#search-input').val()
     queries.forEach((query) => btnSearch(searchInput, query))
-    History.push(searchInput)
+    History.push(searchInput, 6)
     renderHistory()
 
     // nav-top
