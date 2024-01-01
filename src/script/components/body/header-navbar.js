@@ -83,6 +83,7 @@ class headerNavbar extends HTMLElement {
                 <a class="nav-link" data-section="manga">manga</a>
                 <a class="nav-link" data-section="characters">characters</a>
             </div>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
             <i id="nav-btn" class="fa fa-list navbar-list"></i>
         </nav>
     `;
