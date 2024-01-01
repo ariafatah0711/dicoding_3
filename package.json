@@ -7,7 +7,7 @@
     "main": "src/index.js"
   },
   "scripts": {
-    "lint": "eslint . --fix",
+    "lint": "eslint src/**/*.js --fix",
     "build": "webpack --config webpack.prod.js",
     "start-dev": "webpack serve --config webpack.dev.js"
   },
