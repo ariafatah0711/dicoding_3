@@ -1,6 +1,6 @@
 import $ from 'jquery'
 import Navbar from './navbar'
-import { DataSearch, DataTop, History } from '../data/session-storage.js'
+import { DataSearch, DataTop, History } from '../data/data-source.js'
 import { renderSearch, renderTop, renderHistory } from './render.js'
 import '../components/loader.js'
 

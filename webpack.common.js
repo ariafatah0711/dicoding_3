@@ -58,8 +58,7 @@ module.exports = {
   ],
 
   performance: {
-    // 300kb
-    maxAssetSize: 300 * 1024,
-    maxEntrypointSize: 300 * 1024,
+    maxAssetSize: 350 * 1024,
+    maxEntrypointSize: 350 * 1024,
   },
 };

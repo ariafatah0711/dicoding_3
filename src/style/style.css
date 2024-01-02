@@ -7,6 +7,9 @@
     --bg-color: #B6BBC4;
     --col-1: #B6BBC4;
     --col-2: #3498db;
+    
+    --bg-color: #333333;
+    --text: #fafafa;
 }
 * {
     font-family: 'Poppins', Tahoma ,sans-serif;
@@ -16,7 +19,6 @@
     text-decoration: none;
     text-transform: capitalize;
     user-select: none;
-    color: var(--text);
 }
 
 body {
@@ -28,7 +30,7 @@ body {
 }
 @media (max-width:678px) {
     body {
-        padding: 0 20px;
+        padding: 0;
     }
 }
 
@@ -55,8 +57,4 @@ footer-section {
 .card:hover h1,
 .card:hover p {
     color: var(--col-2) !important;
-}
-
-header-navbar {
-    background: var(--bg-color);
 }

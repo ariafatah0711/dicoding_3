@@ -40,11 +40,13 @@ class Loader extends HTMLElement {
 
   showLoader () {
     $('main').hide()
+    $('footer-section').hide()
     $('#loader-wrapper').css('display', 'flex')
   }
 
   hideLoader () {
     $('main').show()
+    $('footer-section').show()
     $('#loader-wrapper').css('display', 'none')
   }
 

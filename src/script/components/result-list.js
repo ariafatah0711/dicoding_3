@@ -15,13 +15,13 @@ class ResultList extends HTMLElement {
                 gap: 25px 10px;
             }
 
-            @media (max-width:1100px) {
+            @media (max-width:1000px) {
             .list .container {grid-template-columns: repeat(4, 180px);}
             }
-            @media (max-width:900px) {
+            @media (max-width:850px) {
             .list .container {grid-template-columns: repeat(3, 180px);}
             }
-            @media (max-width:600px) {
+            @media (max-width:550px) {
             .list .container {grid-template-columns: repeat(2, 180px);}
             }
             @media (max-width:400px) {

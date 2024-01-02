@@ -1,3 +1,5 @@
+import swal from 'sweetalert'
+
 class FooterSection extends HTMLElement {
   constructor () {
     super()
@@ -11,9 +13,23 @@ class FooterSection extends HTMLElement {
 
   addEventListeners () {
     const h5Element = this.shadowDOM.querySelector('h5')
-    h5Element.addEventListener('click', this.reset)
+
     h5Element.addEventListener('mouseover', () => this.changeText(h5Element))
     h5Element.addEventListener('mouseout', () => this.resetText(h5Element))
+
+    h5Element.addEventListener('click', () => {
+      swal({
+        title: 'Are you sure?',
+        text: 'Are you sure you want to delete a session',
+        icon: 'warning',
+        buttons: true,
+        dangerMode: true
+      }).then((willDelete) => {
+        if (willDelete) {
+          this.reset()
+        }
+      })
+    })
   }
 
   reset () {
@@ -48,7 +64,7 @@ class FooterSection extends HTMLElement {
                 margin-bottom: 0; 
             }
             .footer h5:hover {
-                background-color: var(--col-2);
+                background-color: var(--col-1);
             }
         </style>
 

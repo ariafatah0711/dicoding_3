@@ -1,15 +1,23 @@
 import $ from 'jquery'
+import swal from 'sweetalert'
 
 class headerNavbar extends HTMLElement {
   constructor () {
     super()
     this.render()
     this.toggleMenu()
+    this.logClick()
   }
 
   toggleMenu () {
     $('#nav-btn').click(() => {
       $('.menu').toggleClass('hidden-menu')
+    })
+  }
+
+  logClick () {
+    $('.log').click(() => {
+      swal('Comming Soon', 'feature not found', 'info')
     })
   }
 
@@ -23,30 +31,46 @@ class headerNavbar extends HTMLElement {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 0.5px solid var(--text);
+            background: var(--bg-color);
         }
-        header-navbar h1.tittle {
-            font-size: 1.35rem;
-            z-index: 5
+        .navbar {
+          display: flex;
+          gap: 20px;
+          padding-right: 25px;
         }
+        .navbar .log {
+          background: var(--clr);
+          border-radius: 8px;
+          padding: 2px 10px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          z-index: 5;
+        }
+        .navbar a {
+          font-size: 1rem;
+          color: var(--text);
+          min-height 25px; max-height: 25px;
+        }
+
         .navbar .menu {
             display: flex;
             gap: 25px;
             z-index: 5
         }
 
-        .navbar a, a::after {position: relative;}
-        .navbar a::after{
+        .menu a, a::after {position: relative;}
+        .menu a::after{
             content: ""; position: absolute;
             bottom: -3px; left: 0;
             width: 0; height: 0.2rem;
             background: var(--main-color);
             transition: width 0.3s ease;
         }
-        .navbar a:hover::after{
+        .menu a:hover::after{
           width: 100%;
         }
-        .navbar a {
+        .menu a {
           cursor: pointer;
           z-index: 5
         }
@@ -57,6 +81,7 @@ class headerNavbar extends HTMLElement {
           z-index: 10;
           padding-right: 15px;
           transform: scale(1.5);
+          color: var(--text);
         }
 
         @media (max-width:600px) {
@@ -74,6 +99,7 @@ class headerNavbar extends HTMLElement {
               background-color: #efefef;
               z-index: 5;
               background: var(--col-2) !important;
+              background: var(--bg-color) !important;
           }
           .navbar .menu a {
               text-align: center;
@@ -85,19 +111,21 @@ class headerNavbar extends HTMLElement {
         }
       </style>
 
-      <h1 class="tittle">AnimeLab</h1>
       <nav class="navbar">
         <div class="menu hidden-menu">
-            <a class="nav-link" data-section="home">home</a>
-            <a class="nav-link" data-section="anime">anime</a>
-            <a class="nav-link" data-section="manga">manga</a>
-            <a class="nav-link" data-section="characters">characters</a>
+          <a class="nav-link" data-section="home">home</a>
+          <a class="nav-link" data-section="anime">anime</a>
+          <a class="nav-link" data-section="manga">manga</a>
+          <a class="nav-link" data-section="characters">characters</a>
         </div>
         <i id="nav-btn" class="fa fa-list navbar-list">#</i>
-        </nav>
-        `
-    // <script src="https://kit.fontawesome.com/c90c144b50.js" crossorigin="anonymous"></script>
-    // <i id="nav-btn" class="fa fa-list navbar-list"></i>
+      </nav>
+
+      <nav class="navbar">
+        <a class="log" style="--clr:#FFBC00">login</a>
+        <a class="log" style="--clr:#25A449">sign up</a>
+      </nav>
+      `
   }
 }
 
