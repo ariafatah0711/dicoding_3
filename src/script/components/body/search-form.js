@@ -64,7 +64,7 @@ class SearchForm extends HTMLElement {
         <form name="anime-search-form">
             <input type="text" id="search-input" autocomplete="off" spellcheck="false" placeholder="search" 
             maxlength="20" required>
-            <input type="submit" id="search-submit">
+            <input type="submit" id="search-submit" value="submit">
         </form>
         
         <nav class="navbar-top">

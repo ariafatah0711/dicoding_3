@@ -46,6 +46,9 @@ class headerNavbar extends HTMLElement {
           overflow: hidden;
           text-overflow: ellipsis;
           z-index: 5;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
         .navbar a {
           font-size: 1rem;
