@@ -40,7 +40,7 @@
             const queryParams = new URLSearchParams({
                 q: value
             });
-            const baseUrl = `https://api.jikan.moe/v4/anime?${queryParams}`;
+            const baseUrl = `https://api.jikan.moe/v4/manga?${queryParams}`;
 
             fetch(baseUrl)
                 .then(response => {return response.json()})

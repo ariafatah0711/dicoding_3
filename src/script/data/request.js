@@ -3,8 +3,10 @@ import axios from 'axios'
 const searchRequest = (keyword, type) => {
   const queryParams = {
     q: keyword,
-    sfw: true
+    // sfw: true,
+    sfw: type !== 'manga' // untuk sfw manga ini dikarenakan lagi bug jadi harus di matiin
   }
+  console.log(type)
 
   return axios
     .get(`https://api.jikan.moe/v4/${type}`, { params: queryParams })
